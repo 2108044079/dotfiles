@@ -1,0 +1,27 @@
+[user]
+    name = Kyle Fuller
+    email = kyle@fuller.li
+
+[core]
+    excludesfile = ~/.gitignore_global
+
+[color]
+    ui = auto
+
+[alias]
+    up = pull --rebase
+    wip = commit -m 'wip'
+    rev = rev-parse HEAD
+    s = status -s
+    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    standup = !clear && git log --since '1 day ago' --no-merges --pretty=format':%C(yellow)%h %aN%n %B%n' --author 'Kyle Fuller'
+    conflict = "!f() { git status -s | grep ^UU | awk '{print $2}' ; }; vim `f`"
+
+[push]
+    default = current
+
+[hub]
+    protocol = https
+
+[credential]
+    helper = osxkeychain
